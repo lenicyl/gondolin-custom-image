@@ -1,0 +1,37 @@
+{
+  "arch": "x86_64",
+  "distro": "alpine",
+  "alpine": {
+    "version": "3.23.0",
+    "kernelPackage": "linux-virt",
+    "kernelImage": "vmlinuz-virt",
+    "rootfsPackages": [
+      "linux-virt",
+      "rng-tools",
+      "bash",
+      "ca-certificates",
+      "curl",
+      "e2fsprogs",
+      "e2fsprogs-extra",
+      "nodejs",
+      "npm",
+      "uv",
+      "python3",
+      "openssh"
+    ],
+    "initramfsPackages": [],
+    "krunfwVersion": "v5.2.1"
+  },
+  "rootfs": {
+    "label": "gondolin-root"
+  },
+  "postBuild": {
+    "commands": [
+      "uv pip install --system --break-system-packages paper-xlsx paper-docx paper-pptx
+    ]
+  },
+  "container": {
+    "force": true,
+    "runtime": "podman"
+  }
+}
