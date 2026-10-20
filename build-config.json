@@ -17,18 +17,18 @@
       "npm",
       "uv",
       "python3",
-      "openssh"
+      "openssh",
+      "jq",
+      "git",
+      "zip",
+      "unzip",
+      "ripgrep"
     ],
     "initramfsPackages": [],
     "krunfwVersion": "v5.2.1"
   },
   "rootfs": {
     "label": "gondolin-root"
-  },
-  "postBuild": {
-    "commands": [
-      "uv pip install --system --break-system-packages paper-xlsx paper-docx paper-pptx
-    ]
   },
   "container": {
     "force": true,
